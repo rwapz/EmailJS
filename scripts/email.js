@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    emailjs.init('1_9lrPS1IktYIG7UD'); // Ensure this is your correct EmailJS user ID
+    emailjs.init('USERID'); // Ensure this is your correct EmailJS user ID
 
     const btn = document.getElementById('button');
     const responseMessage = document.getElementById('responseMessage');
@@ -61,8 +61,8 @@ document.addEventListener('DOMContentLoaded', function() {
             btn.value = 'Sending...'; // Change button text to indicate sending
             loadingSpinner.style.display = 'block'; // Show loading spinner
 
-            const serviceID = 'service_w5jjxj8'; // Replace with your service ID
-            const templateID = 'template_lt7sihh'; // Replace with your template ID
+            const serviceID = 'SERVICEID'; // Replace with your service ID
+            const templateID = 'TEMPLATEID'; // Replace with your template ID
 
             emailjs.sendForm(serviceID, templateID, this)
                 .then(() => {
