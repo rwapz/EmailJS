@@ -9,16 +9,15 @@
 <body>
     <div class="container">
         <h1>Subscribe to Our Newsletter</h1>
-        <button id="darkModeToggle">Toggle Dark Mode</button>
         <form id="form">
             <div class="field">
-                <label for="user_name">Name</label>
-                <input type="text" id="user_name" name="user_name" required maxlength="50">
+                <label for="nameID">Name</label>
+                <input type="text" id="nameID" name="user_name" required maxlength="50">
                 <span class="error-message" id="nameError"></span>
             </div>
             <div class="field">
-                <label for="user_email">Email</label>
-                <input type="email" id="user_email" name="user_email" required placeholder="example@domain.com" maxlength="100">
+                <label for="emailID">Email</label>
+                <input type="email" id="emailID" name="user_email" required placeholder="example@domain.com" maxlength="100">
                 <span class="error-message" id="emailError"></span>
             </div>
             <input type="submit" id="button" value="Send Email">
@@ -31,16 +30,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="scripts/email.js"></script>
     <script src="scripts/features.js"></script>
-    <script>
-        // Dark mode toggle functionality
-        document.getElementById('darkModeToggle').addEventListener('click', function() {
-            document.body.classList.toggle('dark-mode'); // Toggle the dark-mode class
-            // Optionally, toggle dark mode styles for inputs and other elements
-            const inputs = document.querySelectorAll('input[type="text"], input[type="email"], input[type="submit"]');
-            inputs.forEach(input => {
-                input.classList.toggle('dark-mode');
-            });
-        });
-    </script>
 </body>
 </html>
