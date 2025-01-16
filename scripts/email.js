@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    emailjs.init('USERID'); // Ensure this is your correct EmailJS user ID
+    emailjs.init('1_9lrPS1IktYIG7UD'); // Ensure this is your correct EmailJS user ID
 
     const btn = document.getElementById('button');
     const responseMessage = document.getElementById('responseMessage');
@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('form').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent the default form submission
 
-        const name = document.getElementById('user_name').value;
-        const email = document.getElementById('user_email').value;
+        const name = document.getElementById('nameID').value;
+        const email = document.getElementById('emailID').value;
 
         // Clear previous error messages
         document.getElementById('nameError').textContent = '';
@@ -61,8 +61,8 @@ document.addEventListener('DOMContentLoaded', function() {
             btn.value = 'Sending...'; // Change button text to indicate sending
             loadingSpinner.style.display = 'block'; // Show loading spinner
 
-            const serviceID = 'SERVICEID'; // Replace with your service ID
-            const templateID = 'TEMPLATEID'; // Replace with your template ID
+            const serviceID = 'service_w5jjxj8'; // Replace with your service ID
+            const templateID = 'template_lt7sihh'; // Replace with your template ID
 
             emailjs.sendForm(serviceID, templateID, this)
                 .then(() => {
@@ -102,7 +102,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     console.log('Thanks for your info, loser'); // Console log message
 
                     // Reset email preview after 5 seconds
-                    setTimeout(() => {
+                    setTimeout(() ```javascript
+                    () => {
                         emailPreviewElement.style.display = 'none'; // Hide email preview
                     }, 5000);
                 }, (err) => {
@@ -114,27 +115,5 @@ document.addEventListener('DOMContentLoaded', function() {
                     responseMessage.style.opacity = 1; // Make error message visible
                 });
         }
-    });
-
-    // Dark mode toggle functionality
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    darkModeToggle.addEventListener('change', function() {
-        document.body.classList.toggle('dark-mode');
-        const container = document.querySelector('.container');
-        container.classList.toggle('dark-mode');
-        const h1 = document.querySelector('h1');
-        h1.classList.toggle('dark-mode');
-        const labels = document.querySelectorAll('label');
-        labels.forEach(label => label.classList.toggle('dark-mode'));
-        const inputs = document.querySelectorAll('input[type="text"], input[type="email"]');
-        inputs.forEach(input => input.classList.toggle('dark-mode'));
-        const submitButton = document.querySelector('input[type="submit"]');
-        submitButton.classList.toggle('dark-mode');
-        const notification = document.getElementById('notification');
-        notification.classList.toggle('dark-mode');
-        const errorMessages = document.querySelectorAll('.error-message');
-        errorMessages.forEach(error => error.classList.toggle('dark-mode'));
-        const responseMessages = document.querySelectorAll('.response-message');
-        responseMessages.forEach(response => response.classList.toggle('dark-mode'));
     });
 });
